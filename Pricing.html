@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Main Landing Page</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+
+        <style>
+            .button {
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: #ffffff;
+  padding: 1em 2em;
+  border: none;
+  color: rgb(230, 99, 99);
+  font-size: 1.2em;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  border-radius: 100px;
+}
+.button span {
+  position: relative;
+  pointer-events: none;
+}
+.button::before {
+  --size: 0;
+  content: '';
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient(circle closest-side, #4405f7, transparent);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  transition: width .2s ease, height .2s ease;
+}
+.button:hover::before {
+  --size: 400px;
+
+  
+}
+
+#menuToggle {
+            display: block;
+            position: relative;
+            top: 50px;
+            left: 10px;
+            
+            z-index: 1;
+
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        #menuToggle input {
+            display: block;
+            width: 40px;
+            height: 32px;
+            position: absolute;
+            top: -7px;
+            left: -5px;
+           
+            opacity: 0; /* hide this */
+            z-index: 2; /* and place it over the hamburger */
+
+            -webkit-touch-callout: none;
+        }
+
+        /*
+         * Just a quick hamburger
+         */
+        #menuToggle span {
+            display: block;
+            width: 33px;
+            height: 4px;
+            margin-bottom: 5px;
+            position: relative;
+
+            background: #cdcdcd;
+            border-radius: 3px;
+
+            z-index: 1;
+
+            transform-origin: 4px 0px;
+
+            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+            background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+            opacity 0.55s ease;
+        }
+
+        #menuToggle span:first-child {
+            transform-origin: 0% 0%;
+        }
+
+        #menuToggle span:nth-last-child(2) {
+            transform-origin: 0% 100%;
+        }
+
+        /*
+         * Transform all the slices of hamburger
+         * into a crossmark.
+         */
+        #menuToggle input:checked ~ span {
+            
+            background: red;
+        }
+
+        /*
+         * But let's hide the middle one.
+         */
+     
+        /*
+         * Make this absolute positioned
+         * at the top left of the screen
+         */
+        #menu {
+            position: absolute;
+            width: 300px;
+            height:300px;
+            margin: -60px 0 0 -10px;
+            padding: 80px;
+            /* padding-top: 125px;  */
+            clip-path: circle(70% at 30% 30%);
+            
+            background: black; 
+            list-style-type: none;
+            -webkit-font-smoothing: antialiased;
+            /* to stop flickering of text in safari */
+               
+            /* visibility: hidden; */
+            transform-origin: 0% 0%;
+            transform: translate(-100%, 0);
+
+            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        }
+
+        #menu li {
+            padding: 10px 0;
+            font-size: 22px;
+        }
+
+        
+        #menuToggle input:checked ~ ul {
+            transform: none;
+           
+            visibility: visible;
+        }
+
+
+        .onclick-menu:focus {
+          
+            pointer-events: none;
+        }
+
+        .onclick-menu:focus .onclick-menu-content {
+            
+            opacity: 1;
+            visibility: visible;
+            display: inherit;
+     
+            pointer-events: auto;
+        }
+
+        .onclick-menu-content {
+         
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: visibility 0.5s;
+        }
+        .onclick-menu-content li{
+            list-style: none;
+        }
+        
+        #menu .sectionRed a {
+            color: white;   
+        }
+        #menu .sectionYellow a {
+            color: white;   
+        }
+        #menu .sectionPerk a {
+            color: white;   
+        }
+        #menu .sectionReviews a {
+            color: white;   
+        }
+        #menu .sectionGetEXP a {
+            color: white;   
+        }
+        
+
+        #menu .sectionRed a:hover {
+            color: red;   
+        }
+        #menu .sectionYellow a:hover {
+            color: yellow;   
+        }
+        #menu .sectionPerk a:hover {
+            color: black;   
+        }
+        #menu .sectionReviews a:hover {
+            color: turquoise;   
+        }
+        #menu .sectionGetEXP a:hover {
+            color: Black;   
+        }
+        #pricingOne {
+            padding:10px;
+            float: left;
+            width: 30%;
+            
+        }
+        #pricingTwo {
+            padding:10px;
+            float: left;
+            width: 30%;
+            
+        }
+        #pricingThree {
+            padding:10px;
+            float: left;
+            width: 30%;
+           
+        }
+
+        </style>
+    </head>
+    
+    <body id="page-top">
+        <!-- Navigation-->
+        
+
+        <!--Section 1 Pricing -->
+        <section Style="background-color:rgb(25, 25, 25);padding-top:10px;padding-bottom:10px;">
+            <div id="menuToggle">
+               
+                <input type="checkbox"></input>
+          
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  
+                 
+                  <ul id="menu" style="background-color:aqua">
+                      
+                      <li class="sectionPerk"><a href="#">WHAT IS IT</a></li>
+                      <li class="sectionPerk"><a href="#">PERKS</a></li>
+                      <li class="sectionPerk"><a href="#" >PRICING</a></li>
+                  
+                  </ul>
+              
+              </div>
+              <br>
+            
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                  
+                    <div class="col-lg-10 ">
+                        <br>
+                        <br>
+                        <br>
+                            <h2 style="color:white;">PRICING</h2>
+                            <h4 style="color:white;">Test out our app today! Choose from three subscription Based payment models.</h4>
+                            <div id="parent" style="padding:10px;">
+                                <div id="pricingOne">
+                                    <h3 style="color:rgb(210, 72, 72);">BASIC</h3>
+                                    <hr style="width:30%;border-width:0;height:2px;color:rgb(210, 72, 72);">
+                                    <h3 style="color:rgb(210, 72, 72);">MONTHLY</h3>
+                                    <h1 style="color:rgb(210, 72, 72);">&#36;9</h1>
+                                   <ul style="color:white;">
+                                       <li>Very Good</li>
+                                       <li>Amazing</li>
+                                       <li>Perfect job</li>
+                                       <li>Love this</li>
+                                       <li>It's so good</li>
+                                       <li>Features</li>
+                                   </ul>
+                                   <button class="button" onclick="location.href='Payment.html'" type="button" style="background-color:rgb(210, 72, 72);">
+                                    <span style="color:white;">Select</span>
+                                </button>
+                                </div>
+                                <div id="pricingTwo">
+                                    <h3 style="color:rgb(255, 179, 63);">ADVANCED</h3>
+                                    <hr style="width:30%;border-width:0;height:2px;color:rgb(255, 179, 63);">
+                                    <h3 style="color:rgb(255, 179, 63);">YEARLY</h3>
+                                    <h1 style="color:rgb(255, 179, 63);">&#36;99</h1>
+                                   <ul style="color:white;">
+                                       <li>Very Good</li>
+                                       <li>Even Amazing</li>
+                                       <li>Perfect job</li>
+                                       <li>Love this more</li>
+                                       <li>It's so so good</li>
+                                       <li>More Features</li>
+                                   </ul>
+                                   <button class="button" onclick="location.href='Payment.html'" type="button" style="background-color:rgb(255, 179, 63);">
+                                    <span style="color:white;">Select</span>
+                                </button>
+                                </div>
+                                <div id="pricingThree">
+                                    <h3 style="color:rgb(31, 225, 233);">PRO</h3>
+                                    <hr style="width:30%;border-width:0;height:2px;color:rgb(31, 225, 233);">
+                                    <h3 style="color:rgb(31, 225, 233);">YEARLY</h3>
+                                    <h1 style="color:rgb(31, 225, 233);">&#36;120</h1>
+                                   <ul style="color:white;">
+                                       <li>Very very Good</li>
+                                       <li>Even more</li>
+                                       <li>Perfect job</li>
+                                       <li>Love this more</li>
+                                       <li>It's so so good</li>
+                                       <li>More Features</li>
+                                   </ul>
+                                   <button class="button" onclick="location.href='Payment.html'" type="button" style="background-color:rgb(31, 225, 233);">
+                                    <span style="color:white;">Select</span>
+                                </button>
+                                </div>
+                            </div>      
+                        
+                    </div>
+                   
+                </div>
+            </div>
+        </section>
+
+        <!--Section 2 Perks -->
+        <section Style="background-color:rgb(211, 72, 72);padding-top:10px;padding-bottom:10px;">
+            <div id="menuToggle">
+               
+                <input type="checkbox"></input>
+          
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  
+                 
+                  <ul id="menu" >
+                      
+                      <li class="sectionReviews"><a href="#">WHAT IS IT</a></li>
+                      <li class="sectionReviews"><a href="#">PERKS</a></li>
+                      <li class="sectionReviews"><a href="#" >PRICING</a></li>
+                  
+                  </ul>
+              
+              </div>
+              <br>
+             
+              <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                  
+                    <div class="col-lg-10 ">
+                        
+                            <h2 style="color:white;">PERKS</h2>
+                            
+                    
+                       
+                        <div id="parent" style="padding:10px;">
+                            <div id="pricingOne">
+                                    <hr style="width:30%;border-width:0;height:2px;color:rgb(255, 255, 255);">
+                                    <h3 style="color:rgb(255, 255, 255);">Subscription Payment Model</h3>
+                                    <h4 style="color:rgb(0, 0, 0);">No commitment, cancel anytime. Never worry about forgetting a payment again!</h4>
+                                   
+                                </div>
+                                <div id="pricingTwo">
+                                    <hr style="width:30%;border-width:0;height:2px;color:rgb(255, 255, 255);">
+                                    <h3 style="color:rgb(255, 255, 255);">No Fee Cancelation Policy</h3>
+                                    <h4 style="color:rgb(0, 0, 0);">No commitment, cancel anytime. Never worry about forgetting a payment again!</h4>
+                                </div>
+                                <div id="pricingThree">
+                                    <hr style="width:30%;border-width:0;height:2px;color:rgb(255, 255, 255);">
+                                    <h3 style="color:rgb(255, 255, 255);">Subscription Payment Model</h3>
+                                    <h4 style="color:rgb(0, 0, 0);">No commitment, cancel anytime. Never worry about forgetting a payment again!</h4>
+                                </div>
+                            </div>   
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+     
+
+        <!-- Footer-->
+        <footer class="py-5" style="background-color:#7446f1">
+
+            
+            <div class="container px-5">
+                <p style="color:white;"><i class="far fa-envelope"></i> support@experienceconcerts.co</p>
+                <h5 class="text-center" style="color:white;">EXP | CON</h5>
+                <p class="m-0 text-center text-white small">2019 &copy; All Rights Reserved | Speer Technologies Incorporated</p></div>
+        </footer>
+
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script>document.querySelector('.button').onmousemove = function (e) {
+
+            var x = e.pageX - e.target.offsetLeft;
+            var y = e.pageY - e.target.offsetTop;
+        
+            e.target.style.setProperty('--x', x + 'px');
+            e.target.style.setProperty('--y', y + 'px');
+        };
+        </script>
+    </body>
+</html>
+

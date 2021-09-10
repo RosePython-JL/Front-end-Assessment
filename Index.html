@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Main Landing Page</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+
+        <style>
+            .button {
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: #ffffff;
+  padding: 1em 2em;
+  border: none;
+  color: rgb(230, 99, 99);
+  font-size: 1.2em;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  border-radius: 100px;
+}
+.button span {
+  position: relative;
+  pointer-events: none;
+}
+.button::before {
+  --size: 0;
+  content: '';
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient(circle closest-side, #4405f7, transparent);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  transition: width .2s ease, height .2s ease;
+}
+.button:hover::before {
+  --size: 400px;
+
+  
+}
+
+#menuToggle {
+            display: block;
+            position: relative;
+            top: 50px;
+            left: 10px;
+            
+            z-index: 1;
+
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        #menuToggle input {
+            display: block;
+            width: 40px;
+            height: 32px;
+            position: absolute;
+            top: -7px;
+            left: -5px;
+           
+            opacity: 0; /* hide this */
+            z-index: 2; /* and place it over the hamburger */
+
+            -webkit-touch-callout: none;
+        }
+
+        /*
+         * Just a quick hamburger
+         */
+        #menuToggle span {
+            display: block;
+            width: 33px;
+            height: 4px;
+            margin-bottom: 5px;
+            position: relative;
+
+            background: #cdcdcd;
+            border-radius: 3px;
+
+            z-index: 1;
+
+            transform-origin: 4px 0px;
+
+            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+            background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+            opacity 0.55s ease;
+        }
+
+        #menuToggle span:first-child {
+            transform-origin: 0% 0%;
+        }
+
+        #menuToggle span:nth-last-child(2) {
+            transform-origin: 0% 100%;
+        }
+
+        /*
+         * Transform all the slices of hamburger
+         * into a crossmark.
+         */
+        #menuToggle input:checked ~ span {
+            
+            background: red;
+        }
+
+        /*
+         * But let's hide the middle one.
+         */
+     
+        /*
+         * Make this absolute positioned
+         * at the top left of the screen
+         */
+        #menu {
+            position: absolute;
+            width: 300px;
+            height:300px;
+            margin: -60px 0 0 -10px;
+            padding: 80px;
+            /* padding-top: 125px;  */
+            clip-path: circle(70% at 30% 30%);
+            
+            background: black; 
+            list-style-type: none;
+            -webkit-font-smoothing: antialiased;
+            /* to stop flickering of text in safari */
+               
+            /* visibility: hidden; */
+            transform-origin: 0% 0%;
+            transform: translate(-100%, 0);
+
+            transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        }
+
+        #menu li {
+            padding: 10px 0;
+            font-size: 22px;
+        }
+
+        
+        #menuToggle input:checked ~ ul {
+            transform: none;
+           
+            visibility: visible;
+        }
+
+
+        .onclick-menu:focus {
+          
+            pointer-events: none;
+        }
+
+        .onclick-menu:focus .onclick-menu-content {
+            
+            opacity: 1;
+            visibility: visible;
+            display: inherit;
+     
+            pointer-events: auto;
+        }
+
+        .onclick-menu-content {
+         
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: visibility 0.5s;
+        }
+        .onclick-menu-content li{
+            list-style: none;
+        }
+        
+        #menu .sectionRed a {
+            color: white;   
+        }
+        #menu .sectionYellow a {
+            color: white;   
+        }
+        #menu .sectionPerk a {
+            color: white;   
+        }
+        #menu .sectionReviews a {
+            color: white;   
+        }
+        #menu .sectionGetEXP a {
+            color: white;   
+        }
+        
+
+        #menu .sectionRed a:hover {
+            color: red;   
+        }
+        #menu .sectionYellow a:hover {
+            color: yellow;   
+        }
+        #menu .sectionPerk a:hover {
+            color: black;   
+        }
+        #menu .sectionReviews a:hover {
+            color: turquoise;   
+        }
+        #menu .sectionGetEXP a:hover {
+            color: Black;   
+        }
+        #subSectionOne {
+            padding:10px;
+            float: left;
+            width: 30%;
+            
+        }
+        #subSectionTwo {
+            padding:10px;
+            float: left;
+            width: 30%;
+            
+        }
+        #subSectionThree {
+            padding:10px;
+            float: left;
+            width: 30%;
+           
+        }
+        </style>
+    </head>
+    
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+            <div class="container px-5">
+                <a class="navbar-brand" href="#page-top">EXP|CON</a>
+                
+            </div>
+        </nav>
+        <!-- Hero Section-->
+        <header class="masthead text-center text-white">
+            <div class="masthead-content">
+                <div class="container px-5">
+                    <h1 class="masthead-heading mb-0">One Page Wonder</h1>
+                    <h2 class="masthead-subheading mb-0">Will Rock Your Socks Off</h2>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Learn More</a>
+                </div>
+            </div>
+            <div class="bg-circle-1 bg-circle"></div>
+            <div class="bg-circle-2 bg-circle"></div>
+            <div class="bg-circle-3 bg-circle"></div>
+            <div class="bg-circle-4 bg-circle"></div>
+        </header>
+
+        <!--Section 2 RED -->
+        <section class="section2" Style="background-color: rgb(211,72,72); cursor: cell;">
+            <div id="menuToggle">
+               
+              <input type="checkbox"></input>
+        
+                <span></span>
+                <span></span>
+                <span></span>
+                
+               
+                <ul id="menu" >
+                    
+                    <li class="sectionRed"><a href="#">WHAT IS IT</a></li>
+                    <li class="sectionRed"><a href="#">PERKS</a></li>
+                    <li class="sectionRed"><a href="#" >PRICING</a></li>
+                
+                </ul>
+            
+            </div>
+            <br>
+            <button class="button" onclick="location.href='Pricing.html'" type="button" style="float: right; margin-top: 20px;">
+                <span>Try it now</span>
+            </button>
+            <div class="container px-5">
+                
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/hi-fi.jpg" alt="..." /></div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="p-5">
+                            <h2 style="color:white; font:bold;">SUPERIOR SOUND</h2>
+                            <h4>Experience live versions of your favourite songs</h4>
+                            <br>
+                            <button class="button">
+                                <span>SEE DEMO</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!--Section 3 Yellow -->
+        <section Style="background-color:rgb(255, 179, 63);">
+            <div id="menuToggle">
+               
+                <input type="checkbox"></input>
+          
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  
+                 
+                  <ul id="menu" >
+                      
+                      <li class="sectionYellow"><a href="#">WHAT IS IT</a></li>
+                      <li class="sectionYellow"><a href="#">PERKS</a></li>
+                      <li class="sectionYellow"><a href="#" >PRICING</a></li>
+                  
+                  </ul>
+              
+              </div>
+              <br>
+              <button class="button" onclick="location.href='Pricing.html'" type="button" style="float: right; margin-top: 20px;">
+                <span>Try it now</span>
+            </button>
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/02.jpg" alt="..." /></div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-5">
+                            <h2 class="display-4" style="color:white;">Front Row Seats</h2>
+                            <h5>Experience concerts up close and personal.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Section 4 Perks -->
+        <section Style="background-color:black;">
+            <div id="menuToggle">
+               
+                <input type="checkbox"></input>
+          
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  
+                 
+                  <ul id="menu" style="background-color:aqua">
+                      
+                      <li class="sectionPerk"><a href="#">WHAT IS IT</a></li>
+                      <li class="sectionPerk"><a href="#">PERKS</a></li>
+                      <li class="sectionPerk"><a href="#" >PRICING</a></li>
+                  
+                  </ul>
+              
+              </div>
+              <br>
+            <button class="button" onclick="location.href='Pricing.html'" type="button" style="float: right; margin-top: 20px;">
+                <span>Try it now</span>
+            </button>
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                  
+                    <div class="col-lg-10 ">
+                        
+                            <h2 style="color:white;">PERKS</h2>
+                            
+                    
+                       
+                        <div id="parent" style="padding:10px;">
+                            <div id="subSectionOne">
+                                    <hr style="width:30%;border-width:0;height:2px;color:rgb(224, 93, 93);">
+                                    <h3 style="color:rgb(224, 93, 93);">Subscription Payment Model</h3>
+                                    <h4 style="color:rgb(255, 255, 255);">No commitment, cancel anytime. Never worry about forgetting a payment again!</h4>
+                                   
+                                </div>
+                                <div id="subSectionTwo">
+                                    <hr style="width:30%;border-width:0;height:2px;color:rgb(56, 190, 243);">
+                                    <h3 style="color:rgb(56, 190, 243);;">No Fee Cancelation Policy</h3>
+                                    <h4 style="color:rgb(255, 255, 255);">No commitment, cancel anytime. Never worry about forgetting a payment again!</h4>
+                                </div>
+                                <div id="subSectionThree">
+                                    <hr style="width:30%;border-width:0;height:2px;color:rgb(243, 230, 41);">
+                                    <h3 style="color:rgb(243, 230, 41);">Subscription Payment Model</h3>
+                                    <h4 style="color:rgb(255, 255, 255);">No commitment, cancel anytime. Never worry about forgetting a payment again!</h4>
+                                </div>
+                            </div>   
+                            
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+        </section>
+
+        <!--Section 5 Reviews -->
+        <section Style="background-color:rgb(31,225,233);">
+            <div id="menuToggle">
+               
+                <input type="checkbox"></input>
+          
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  
+                 
+                  <ul id="menu" >
+                      
+                      <li class="sectionReviews"><a href="#">WHAT IS IT</a></li>
+                      <li class="sectionReviews"><a href="#">PERKS</a></li>
+                      <li class="sectionReviews"><a href="#" >PRICING</a></li>
+                  
+                  </ul>
+              
+              </div>
+              <br>
+              <button class="button" onclick="location.href='Pricing.html'" type="button" style="float: right; margin-top: 20px;">
+                <span>Try it now</span>
+            </button>
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                   
+                   
+                        <div class="p-5">
+                            <h1 style="color:white;">REVIEWS</h1>
+                            <div id="parent" style="padding:10px;">
+                                <div id="subSectionOne">
+                                    <h3>	&#9733;	&#9733;	&#9733;	&#9733;	&#9733;</h3>
+                                        <h3 style="color:rgb(255, 255, 255);">ARTIST</h3>
+                                        <h4 style="color:rgb(0, 0, 0);">"Love it, it's the Best. I can't live without it!"</h4>
+                                       
+                                    </div>
+                                    <div id="subSectionTwo">
+                                        <h3>	&#9733;	&#9733;	&#9733;	&#9733;	&#9733;</h3>
+                                        <h3 style="color:rgb(255, 255, 255);;">PRODUCER</h3>
+                                        <h4 style="color:rgb(0, 0, 0);">"Love it, it's the Best. I can't live without it!"</h4>
+                                    </div>
+                                    <div id="subSectionThree">
+                                        <h3>	&#9733;	&#9733;	&#9733;	&#9733;	&#9733;</h3>
+                                        <h3 style="color:rgb(255, 255, 255);">MUSIC FAN</h3>
+                                        <h4 style="color:rgb(0, 0, 0);">"Love it, it's the Best. I can't live without it!"</h4>
+                                    </div>
+                                </div>   
+                                
+                           
+                        </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!--Section 6 EXP| CON Now -->
+        <section style="background-color: rgb(25,25,25);">
+            <div id="menuToggle">
+               
+                <input type="checkbox"></input>
+          
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  
+                 
+                  <ul id="menu" style="background-color:aqua">
+                      
+                      <li class="sectionGetEXP"><a href="#">WHAT IS IT</a></li>
+                      <li class="sectionGetEXP"><a href="#">PERKS</a></li>
+                      <li class="sectionGetEXP"><a href="#" >PRICING</a></li>
+                  
+                  </ul>
+              
+              </div>
+              <br>
+              
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-3 order-lg-2">
+                        <div class="p-5">
+                            <button class="button" onclick="location.href='Pricing.html'" type="button" style="float: right; margin-top: 20px;">
+                            <span>Try it now</span>
+                        </button></div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="p-5">
+                            <br>
+                            <h2 style="color:red;">GET EXP|CON NOW</h2>
+                            <h4 style="color:white;">Purchase and download the app</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer-->
+        <footer class="py-5" style="background-color:#7446f1">
+
+            
+            <div class="container px-5">
+                <p style="color:white;"><i class="far fa-envelope"></i> support@experienceconcerts.co</p>
+                <h5 class="text-center" style="color:white;">EXP | CON</h5>
+                <p class="m-0 text-center text-white small">2019 &copy; All Rights Reserved | Speer Technologies Incorporated</p></div>
+        </footer>
+
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script>document.querySelector('.button').onmousemove = function (e) {
+
+            var x = e.pageX - e.target.offsetLeft;
+            var y = e.pageY - e.target.offsetTop;
+        
+            e.target.style.setProperty('--x', x + 'px');
+            e.target.style.setProperty('--y', y + 'px');
+        };
+        </script>
+    </body>
+</html>
+
