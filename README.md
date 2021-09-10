@@ -21,8 +21,8 @@ Finished
 Section 6:
 Finished
 
-Pricing page
+Pricing page:
 Finished
 
-Payment page
+Payment page:
 Finished
