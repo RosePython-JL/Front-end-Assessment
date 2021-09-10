@@ -1,5 +1,5 @@
 # Front-end-Assessment
-Programming language: html, css, javascript
+Programming language: HTML, CSS, JavaScript
 
 Framework: Bootstrap for styling 
 
