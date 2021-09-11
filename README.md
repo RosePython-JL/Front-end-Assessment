@@ -3,7 +3,7 @@ Programming language: HTML, CSS, JavaScript
 
 Framework: Bootstrap for styling 
 
-Update 1:
+Update 1 9/9/2021:
 
 Hero Section
 Finished - hamburger menu 
@@ -32,5 +32,5 @@ Finished
 Payment page:
 Finished
 
-Update 2:
+Update 2 9/10/2021:
 Only reveal image in section 3 is unfinished
