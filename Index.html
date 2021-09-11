@@ -201,7 +201,6 @@
         #menu .sectionGetEXP a {
             color: white;   
         }
-        
 
         #menu .sectionRed a:hover {
             color: red;   
@@ -236,32 +235,196 @@
             width: 30%;
            
         }
+        #slide-background{
+            width:100%;
+            height: 60vh;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            backface-visibility: hidden;
+            animation: slideBg 30s linear infinite 0s;
+            animation-timing-function: ease-in-out;
+            background-image: url('assets/img/hero1.jpg');
+            
+        }
+        @keyframes slideBg {
+            0%{
+                background-image: url('assets/img/hero1.jpg');  
+                
+            }
+            50%{
+                background-image: url('assets/img/hero2.jpg'); 
+                
+            }
+            100%{
+                background-image: url('assets/img/hero3.jpg'); 
+                
+            }
+            
+        }
+        [class*=btn-] {
+            outline: 0;
+            border-radius: 50px;
+            font-size: 0.8em;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            letter-spacing: 4px;
+            overflow: hidden;
+            position: relative;
+            padding: 2em 3em;
+            margin: 4em;
+            text-transform: uppercase;
+            -webkit-tap-highlight-color: transparent;
+            transition: all 500ms ease-in-out;
+        }
+        [class*=btn-]::after, [class*=btn-]::before {
+            content: "";
+            position: absolute;
+        }
+        [class*=btn-]:hover, [class*=btn-]:focus {
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        [class*=btn-mix]::after {
+            background: #222;
+            border-radius: 120px;
+            content: attr(data-text);
+            color: #fff;
+            padding: 1.6em 2.5em;
+            top: 0.4em;
+            left: 0.5em;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+                -ms-user-select: none;
+                    user-select: none;
+                    
+                    -webkit-user-drag: none;        
+        
+        
+        }
+        [class*=btn-mix]::before {
+            background: transparent;
+            border-radius: 100%;
+            top: 50%;
+            left: 50%;
+            box-shadow: 0 1em 2em 3em rgba(255, 50, 0, 0.5), 4em 0em 2em 2em rgba(155, 50, 0, 0.6), -4em -2em 2em 2em rgba(255, 0, 150, 0.5), -4em 2em 2em 4em rgba(0, 0, 150, 0.5), 0 -3em 2em 3em rgba(120, 250, 0, 0.5), 2em -1em 2em 2em rgba(50, 10, 200, 0.5);
+            width: 0;
+            height: 0;
+            -webkit-animation: mix 5s linear infinite;
+                    animation: mix 5s linear infinite;
+        }
+
+        @-webkit-keyframes mix {
+        30% {
+            box-shadow: 0 -1em 2em 3em rgba(255, 0, 200, 0.5), 4em -1em 2em 3em rgba(255, 50, 0, 0.8), -4em 2em 3em 2em rgba(155, 200, 0, 0.5), -4em -2em 2em 2em rgba(200, 0, 150, 0.6), 0 3em 2em 2em rgba(20, 250, 0, 0.5), 2em 1em 2em 2em rgba(50, 10, 250, 0.5);
+        }
+        60% {
+            box-shadow: 2em 1em 2em 3em rgba(55, 0, 200, 0.5), 3em 1em 2em 3em rgba(25, 150, 0, 0.6), 3em -2em 3em 3em rgba(155, 200, 0, 0.5), -4em 2em 2em 3em rgba(200, 0, 50, 0.6), 0 -3em 2em 3em rgba(200, 250, 0, 0.5), -2em 1em 2em 3em rgba(50, 210, 250, 0.6);
+        }
+        }
+
+        @keyframes mix {
+        30% {
+            box-shadow: 0 -1em 2em 3em rgba(255, 0, 200, 0.5), 4em -1em 2em 3em rgba(255, 50, 0, 0.8), -4em 2em 3em 2em rgba(155, 200, 0, 0.5), -4em -2em 2em 2em rgba(200, 0, 150, 0.6), 0 3em 2em 2em rgba(20, 250, 0, 0.5), 2em 1em 2em 2em rgba(50, 10, 250, 0.5);
+        }
+        60% {
+            box-shadow: 2em 1em 2em 3em rgba(55, 0, 200, 0.5), 3em 1em 2em 3em rgba(25, 150, 0, 0.6), 3em -2em 3em 3em rgba(155, 200, 0, 0.5), -4em 2em 2em 3em rgba(200, 0, 50, 0.6), 0 -3em 2em 3em rgba(200, 250, 0, 0.5), -2em 1em 2em 3em rgba(50, 210, 250, 0.6);
+        }
+        }
+        .btn-mix-noborder::after {
+            background: transparent !important;
+            color: #222 !important;
+        }
+
+        .btn-mix-noRadius {
+            border-radius: 0 !important;
+        }
+        .btn-mix-noRadius::after, .btn-mix-noRadius::before {
+         border-radius: 0 !important;
+        }
+        .colorBtn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 200px;
+        }   
+
+        a {
+             text-decoration: none;
+        } 
+
+        @font-face {
+            src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/Anders.ttf");
+            font-family: test;
+        }
+        *, *:before, *:after {
+        box-sizing: border-box;
+        margin: 0;
+        }
+
+        /* .container:hover {
+        cursor: crosshair;
+        }
+        .text {
+        position: absolute;
+        font-size: 72px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #000000;
+        bottom: 20%;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        }
+        .magic {
+        position: absolute;
+        top: calc(50% - 10rem);
+        left: calc(50% - 10rem);
+        width: 20rem;
+        height: 20rem;
+        background: center center no-repeat fixed;
+        background-size: cover;
+        border-radius: 50%;
+        z-index: 2;
+        } */
+
+       
+            
         </style>
     </head>
     
     <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-            <div class="container px-5">
-                <a class="navbar-brand" href="#page-top">EXP|CON</a>
+    
+        
+        <!-- Hero Section-->
+        <section>
+            <div id="slide-background">
+                <div id="menuToggle">
+               
+                    <input type="checkbox"></input>
+              
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      
+                     
+                      <ul id="menu" >
+                          
+                          <li class="sectionRed"><a href="#">WHAT IS IT</a></li>
+                          <li class="sectionRed"><a href="#">PERKS</a></li>
+                          <li class="sectionRed"><a href="#" >PRICING</a></li>
+                      
+                      </ul>
+                  
+                  </div>
+                 
+                  
+                <div class="colorBtn"><a href="Pricing.html" class="btn-mix-noborder" data-text="Try it now">Try it now</a></div>
                 
             </div>
-        </nav>
-        <!-- Hero Section-->
-        <header class="masthead text-center text-white">
-            <div class="masthead-content">
-                <div class="container px-5">
-                    <h1 class="masthead-heading mb-0">One Page Wonder</h1>
-                    <h2 class="masthead-subheading mb-0">Will Rock Your Socks Off</h2>
-                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Learn More</a>
-                </div>
-            </div>
-            <div class="bg-circle-1 bg-circle"></div>
-            <div class="bg-circle-2 bg-circle"></div>
-            <div class="bg-circle-3 bg-circle"></div>
-            <div class="bg-circle-4 bg-circle"></div>
-        </header>
+           
 
+        </section>
+      
         <!--Section 2 RED -->
         <section class="section2" Style="background-color: rgb(211,72,72); cursor: cell;">
             <div id="menuToggle">
@@ -290,7 +453,31 @@
                 
                 <div class="row gx-5 align-items-center">
                     <div class="col-lg-6 order-lg-2">
-                        <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/hi-fi.jpg" alt="..." /></div>
+                        <div class="p-5">
+                            <section class="master-controls" style="display:none;">
+                                <input type="range" id="volume" class="control-volume" min="0" max="2" value="1" list="gain-vals" step="0.01" data-action="volume" />
+                                 <datalist id="gain-vals">
+                                    <option value="0" label="min">
+                                    <option value="2" label="max">
+                                </datalist>
+                                <label for="volume">VOL</label>
+                    
+                                <input type="range" id="panner" class="control-panner" list="pan-vals" min="-1" max="1" value="0" step="0.01" data-action="panner" />
+                                <datalist id="pan-vals">
+                                    <option value="-1" label="left">
+                                    <option value="1" label="right">
+                                </datalist>
+                                <label for="panner">PAN</label>
+                                
+                                 <button class="control-power" role="switch" aria-checked="false" data-power="on">
+                                    <span>On/Off</span>
+                                </button>
+                            </section>
+                            <button data-playing="false" class="tape-controls-play" role="switch" aria-checked="false">
+                                <audio src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/858/outfoxing.mp3" crossorigin="anonymous" ></audio>
+                                <img class="img-fluid" src="assets/img/hi-fi.jpg" alt="..." />
+                            </button>
+                           </div>
                     </div>
                     <div class="col-lg-6 order-lg-1">
                         <div class="p-5">
@@ -308,6 +495,8 @@
 
          <!--Section 3 Yellow -->
         <section Style="background-color:rgb(255, 179, 63);">
+            
+        </div>
             <div id="menuToggle">
                
                 <input type="checkbox"></input>
@@ -326,7 +515,12 @@
                   </ul>
               
               </div>
+              <!-- <div class="container">
+               
+                <div class="magic" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/hover-reveal.jpg')"></div>
+              </div> -->
               <br>
+
               <button class="button" onclick="location.href='Pricing.html'" type="button" style="float: right; margin-top: 20px;">
                 <span>Try it now</span>
             </button>
@@ -529,3 +723,82 @@
     </body>
 </html>
 
+<script>
+    console.clear();
+    
+    // instigate our audio context
+    
+    // for cross browser
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    const audioCtx = new AudioContext();
+    
+    // load some sound
+    const audioElement = document.querySelector('audio');
+    const track = audioCtx.createMediaElementSource(audioElement);
+    
+    const playButton = document.querySelector('.tape-controls-play');
+    
+    // play pause audio
+    playButton.addEventListener('click', function() {
+        
+        // check if context is in suspended state (autoplay policy)
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
+        
+        if (this.dataset.playing === 'false') {
+            audioElement.play();
+            this.dataset.playing = 'true';
+        // if track is playing pause it
+        } else if (this.dataset.playing === 'true') {
+            audioElement.pause();
+            this.dataset.playing = 'false';
+        }
+        
+        let state = this.getAttribute('aria-checked') === "true" ? true : false;
+        this.setAttribute( 'aria-checked', state ? "false" : "true" );
+        
+    }, false);
+    
+    // if track ends
+    audioElement.addEventListener('ended', () => {
+        playButton.dataset.playing = 'false';
+        playButton.setAttribute( "aria-checked", "false" );
+    }, false);
+    
+    // volume
+    const gainNode = audioCtx.createGain();
+    
+    const volumeControl = document.querySelector('[data-action="volume"]');
+    volumeControl.addEventListener('input', function() {
+        gainNode.gain.value = 1;
+    }, false);
+    
+    // panning
+    const pannerOptions = {pan: 0};
+    const panner = new StereoPannerNode(audioCtx, pannerOptions);
+    
+    const pannerControl = document.querySelector('[data-action="panner"]');
+    pannerControl.addEventListener('input', function() {
+        panner.pan.value = 0;	
+    }, false);
+    
+    // connect our graph
+    track.connect(gainNode).connect(panner).connect(audioCtx.destination);
+    
+    const powerButton = document.querySelector('.control-power');
+    
+    powerButton.addEventListener('click', function() {
+        if (this.dataset.power === 'on') {
+            audioCtx.suspend();
+            this.dataset.power = 'off';
+        } else if (this.dataset.power === 'off') {
+            audioCtx.resume();
+            this.dataset.power = 'on';
+        }
+        this.setAttribute( "aria-checked", state ? "false" : "true" );
+        console.log(audioCtx.state);
+    }, false);
+    
+  
+    </script>
