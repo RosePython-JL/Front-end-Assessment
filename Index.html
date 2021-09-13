@@ -362,30 +362,6 @@
         margin: 0;
         }
 
-        /* .container:hover {
-        cursor: crosshair;
-        }
-        .text {
-        position: absolute;
-        font-size: 72px;
-        font-family: Arial, Helvetica, sans-serif;
-        color: #000000;
-        bottom: 20%;
-        left: 0;
-        right: 0;
-        z-index: 3;
-        }
-        .magic {
-        position: absolute;
-        top: calc(50% - 10rem);
-        left: calc(50% - 10rem);
-        width: 20rem;
-        height: 20rem;
-        background: center center no-repeat fixed;
-        background-size: cover;
-        border-radius: 50%;
-        z-index: 2;
-        } */
 
        
             
@@ -473,9 +449,9 @@
                                     <span>On/Off</span>
                                 </button>
                             </section>
-                            <button data-playing="false" class="tape-controls-play" role="switch" aria-checked="false">
+                            <button data-playing="false" class="tape-controls-play" role="switch" aria-checked="false" width='25' height='25'>
                                 <audio src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/858/outfoxing.mp3" crossorigin="anonymous" ></audio>
-                                <img class="img-fluid" src="assets/img/hi-fi.jpg" alt="..." />
+                                <img class="" style="width:100%" src="assets/img/hi-fi.jpg" alt="..." />
                             </button>
                            </div>
                     </div>
@@ -515,10 +491,7 @@
                   </ul>
               
               </div>
-              <!-- <div class="container">
-               
-                <div class="magic" style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/hover-reveal.jpg')"></div>
-              </div> -->
+            
               <br>
 
               <button class="button" onclick="location.href='Pricing.html'" type="button" style="float: right; margin-top: 20px;">
@@ -724,8 +697,8 @@
 </html>
 
 <script>
-    console.clear();
     
+    //Using Web Audio API fpr Section - red
     // instigate our audio context
     
     // for cross browser
